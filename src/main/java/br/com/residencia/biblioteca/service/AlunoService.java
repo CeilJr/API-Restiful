@@ -28,15 +28,14 @@ public class AlunoService {
 	public Aluno updateAluno(Aluno aluno, Integer id) {
 		Aluno alunoExistenteNoBanco = getAlunoById(id);
 		
-		alunoExistenteNoBanco.setBairro(aluno.getBairro());
-		alunoExistenteNoBanco.setCidade(aluno.getCidade());
-		alunoExistenteNoBanco.setComplemento(aluno.getComplemento());
+		alunoExistenteNoBanco.setNome(aluno.getNome());
 		alunoExistenteNoBanco.setCpf(aluno.getCpf());
 		alunoExistenteNoBanco.setDataNascimento(aluno.getDataNascimento());
-		alunoExistenteNoBanco.setEmprestimos(aluno.getEmprestimos());
 		alunoExistenteNoBanco.setLogradouro(aluno.getLogradouro());
-		alunoExistenteNoBanco.setNome(aluno.getNome());
 		alunoExistenteNoBanco.setNumeroLogradouro(aluno.getNumeroLogradouro());
+		alunoExistenteNoBanco.setComplemento(aluno.getComplemento());
+		alunoExistenteNoBanco.setBairro(aluno.getBairro());
+		alunoExistenteNoBanco.setCidade(aluno.getCidade());
 		
 		return alunoRepository.save(alunoExistenteNoBanco);
 	}
