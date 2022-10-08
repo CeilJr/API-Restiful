@@ -18,10 +18,10 @@ public class EmprestimoService {
 	}
 	
 	public Emprestimo getEmprestimoById(Integer id) {
-		return emprestimoRepository.findById(id).get();
+		return emprestimoRepository.findById(id).orElse(null);
 	}
 	
-	public Emprestimo saveEmpresitmo(Emprestimo emprestimo) {
+	public Emprestimo saveEmprestimo(Emprestimo emprestimo) {
 		return emprestimoRepository.save(emprestimo);
 	}
 	

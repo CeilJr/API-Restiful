@@ -1,6 +1,7 @@
 package br.com.residencia.biblioteca.entity;
 
 import java.time.Instant;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -34,6 +36,17 @@ public class Livro {
 	@ManyToOne
 	@JoinColumn(name = "codigoeditora", referencedColumnName = "codigoeditora")
 	private Editora editora;
+	
+	@OneToMany(mappedBy="livro")
+	private Set<Emprestimo> emprestimos;
+
+	public Set<Emprestimo> getEmprestimos() {
+		return emprestimos;
+	}
+
+	public void setEmprestimos(Set<Emprestimo> emprestimos) {
+		this.emprestimos = emprestimos;
+	}
 
 	public Integer getCodigoLivro() {
 		return codigoLivro;
