@@ -10,6 +10,10 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "codigoEditora")
 @Entity
 @Table(name = "editora")
 public class Editora {
@@ -17,6 +21,7 @@ public class Editora {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "codigoeditora")
 	private Integer codigoEditora;
+
 	@Column(name = "nome")
 	private String nome;
 
