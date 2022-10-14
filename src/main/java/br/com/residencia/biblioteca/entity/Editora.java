@@ -17,6 +17,14 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 @Entity
 @Table(name = "editora")
 public class Editora {
+
+	public Editora() {
+	}
+
+	public Editora(String nome) {
+		this.nome = nome;
+	}
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "codigoeditora")
